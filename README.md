@@ -21,22 +21,22 @@ Useful for scripts, tests, or agents: one frame per call, optional flap.
 ```python
 from main import Game
 
-g = Game()
-g.next_action(True)   # from title: starts + flaps once; while playing: flap + one step
-g.next_action(False)  # one frame, no flap
+game = Game()
+game.next_action(flap=True)   # from title: starts + flaps once; while playing: flap + one step
+game.next_action(flap=False)  # one frame, no flap
 ```
 
-Title → first tap starts the round (same as space in normal play). After that, `True` / `False` is flap or glide for that frame.
+Title → first tap starts the round (same as space in normal play). After that, `flap=True` / `flap=False` is flap or glide for that frame.
 
 **Loop example:**
 
 ```python
 from main import Game
 
-g = Game()
-g.next_action(True)  # start + first flap
+game = Game()
+game.next_action(flap=True)  # start + first flap
 for _ in range(200):
-    g.next_action(False)
+    game.next_action(flap=False)
 ```
 
 **Same game class, interactive loop:**
