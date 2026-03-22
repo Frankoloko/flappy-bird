@@ -42,6 +42,18 @@ GAP_MIN = 110
 GAP_MAX = 150
 BIRD_HITBOX_SHRINK = 4  # pixels per side in native space
 
+# Audio (pygame mixer volume per sound, 0.0–1.0)
+WING_SOUND_VOLUME = 1.0
+POINT_SOUND_VOLUME = 1.0
+HIT_SOUND_VOLUME = 0.3
+DIE_SOUND_VOLUME = 0.4
+SWOOSH_SOUND_VOLUME = 0.4
+
+
+def _apply_sound_volume(sound: Optional[pygame.mixer.Sound], volume: float) -> None:
+    if sound:
+        sound.set_volume(volume)
+
 
 def load_image(name: str) -> pygame.Surface:
     path = os.path.join(SPRITES, name)
@@ -114,6 +126,11 @@ class Game:
         self.snd_hit = load_sound("hit")
         self.snd_die = load_sound("die")
         self.snd_swoosh = load_sound("swoosh")
+        _apply_sound_volume(self.snd_wing, WING_SOUND_VOLUME)
+        _apply_sound_volume(self.snd_point, POINT_SOUND_VOLUME)
+        _apply_sound_volume(self.snd_hit, HIT_SOUND_VOLUME)
+        _apply_sound_volume(self.snd_die, DIE_SOUND_VOLUME)
+        _apply_sound_volume(self.snd_swoosh, SWOOSH_SOUND_VOLUME)
 
         self.font = pygame.font.Font(None, 42)
 
