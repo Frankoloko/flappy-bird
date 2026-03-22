@@ -229,6 +229,50 @@ class Game:
     def update_gameover(self) -> None:
         self.base_offset = (self.base_offset + 1) % self.base.get_width()
 
+    def _step_frame(self, flap: bool) -> None:
+        """Advance the simulation by one frame. If ``flap`` is true, apply a tap / flap first (same semantics as space/click in ``run``)."""
+        if self.state == "ready":
+            if flap:
+                if self.snd_swoosh:
+                    self.snd_swoosh.play()
+                self.start_play()
+                self.flap()
+            if self.state == "playing":
+                self.update_playing()
+            else:
+                self.update_ready()
+        elif self.state == "playing":
+            if flap:
+                self.flap()
+            self.update_playing()
+        elif self.state == "gameover":
+            if flap:
+                if self.snd_swoosh:
+                    self.snd_swoosh.play()
+                self.reset_session()
+            if self.state == "ready":
+                self.update_ready()
+            else:
+                self.update_gameover()
+
+    def _poll_quit_events(self) -> None:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit(0)
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                sys.exit(0)
+
+    def next_action(self, flap: bool) -> None:
+        """Step the game forward by one frame, optionally flapping. Redraws the window.
+
+        Use this for manual or scripted control; use :meth:`run` for normal real-time play.
+        """
+        self._poll_quit_events()
+        self._step_frame(flap)
+        self.draw()
+
     def draw_score(self, y: int) -> None:
         s = str(self.score)
         total_w = sum(self.digit_imgs[int(c)].get_width() for c in s)
@@ -297,6 +341,7 @@ class Game:
 
     def run(self) -> None:
         while True:
+            flap = False
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -306,32 +351,13 @@ class Game:
                         pygame.quit()
                         sys.exit(0)
                     if event.key in (pygame.K_SPACE, pygame.K_UP):
-                        self._on_action()
+                        flap = True
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                    self._on_action()
+                    flap = True
 
-            if self.state == "ready":
-                self.update_ready()
-            elif self.state == "playing":
-                self.update_playing()
-            else:
-                self.update_gameover()
-
+            self._step_frame(flap)
             self.draw()
             self.clock.tick(FPS)
-
-    def _on_action(self) -> None:
-        if self.state == "ready":
-            if self.snd_swoosh:
-                self.snd_swoosh.play()
-            self.start_play()
-            self.flap()
-        elif self.state == "playing":
-            self.flap()
-        else:
-            if self.snd_swoosh:
-                self.snd_swoosh.play()
-            self.reset_session()
 
 
 def main() -> None:
