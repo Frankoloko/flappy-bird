@@ -22,11 +22,11 @@ Useful for scripts, tests, or agents: one frame per call, optional flap.
 from main import Game
 
 game = Game()
-game.next_action(flap=True)   # from title: starts + flaps once; while playing: flap + one step
-game.next_action(flap=False)  # one frame, no flap
+state = game.next_action(flap=True)   # "playing" after title tap; then "ready" | "playing" | "gameover"
+state = game.next_action(flap=False)  # one frame, no flap
 ```
 
-Title → first tap starts the round (same as space in normal play). After that, `flap=True` / `flap=False` is flap or glide for that frame.
+`next_action` returns the state **after** that step. Title → first tap starts the round (same as space in normal play). After that, `flap=True` / `flap=False` is flap or glide for that frame. If the bird dies, the return is `"gameover"`; pass `flap=True` on a later step to go back to the title screen (tap to retry).
 
 **Loop example:**
 
@@ -34,9 +34,9 @@ Title → first tap starts the round (same as space in normal play). After that,
 from main import Game
 
 game = Game()
-game.next_action(flap=True)  # start + first flap
+state = game.next_action(flap=True)  # start + first flap
 for _ in range(200):
-    game.next_action(flap=False)
+    state = game.next_action(flap=False)
 ```
 
 **Same game class, interactive loop:**

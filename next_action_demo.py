@@ -14,11 +14,14 @@ RANDOM_FLAP_PROBABILITY = 0.01
 
 def main() -> None:
     game = Game()
-    game.next_action(flap=True)  # start + first flap
+    state = game.next_action(flap=True)  # start + first flap
     time.sleep(FRAME_DELAY_SECONDS)
     for _ in range(200):
-        should_flap = random.random() < RANDOM_FLAP_PROBABILITY
-        game.next_action(flap=should_flap)
+        if state != "playing":
+            should_flap = True
+        else:
+            should_flap = random.random() < RANDOM_FLAP_PROBABILITY
+        state = game.next_action(flap=should_flap)
         time.sleep(FRAME_DELAY_SECONDS)
 
 

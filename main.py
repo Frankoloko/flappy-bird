@@ -8,7 +8,9 @@ import os
 import random
 import sys
 from dataclasses import dataclass
-from typing import Optional
+from typing import Literal, Optional
+
+GameState = Literal["ready", "playing", "gameover"]
 
 import pygame
 
@@ -264,14 +266,18 @@ class Game:
                 pygame.quit()
                 sys.exit(0)
 
-    def next_action(self, flap: bool) -> None:
+    def next_action(self, flap: bool) -> GameState:
         """Step the game forward by one frame, optionally flapping. Redraws the window.
+
+        Returns the state after this step: ``"ready"``, ``"playing"``, or ``"gameover"``.
+        After death, pass ``flap=True`` on a later step to return to the title screen (same as tap to retry).
 
         Use this for manual or scripted control; use :meth:`run` for normal real-time play.
         """
         self._poll_quit_events()
         self._step_frame(flap)
         self.draw()
+        return self.state
 
     def draw_score(self, y: int) -> None:
         s = str(self.score)
