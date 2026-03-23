@@ -3,7 +3,7 @@ from __future__ import annotations
 import random
 import time
 
-from main import Game
+from game.main import Game
 
 # Pause between steps so you can follow the bird and pipes (seconds).
 FRAME_DELAY_SECONDS = 1.0 / 30

@@ -2,14 +2,24 @@
 
 ## Setup
 
+From the repository root:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-## Play normally
+The stepping demo at the repository root:
 
 ```bash
-python main.py
+python next_action_demo.py
+```
+
+## Play normally
+
+From the repository root:
+
+```bash
+python -m game.main
 ```
 
 **Controls:** Space or ↑ to flap · Left click to flap · Esc or close window to quit
@@ -19,7 +29,7 @@ python main.py
 Useful for scripts, tests, or agents: one frame per call, optional flap.
 
 ```python
-from main import Game
+from game.main import Game
 
 game = Game()
 state = game.next_action(flap=True)   # "playing" after title tap; then "ready" | "playing" | "gameover"
@@ -31,7 +41,7 @@ state = game.next_action(flap=False)  # one frame, no flap
 **Loop example:**
 
 ```python
-from main import Game
+from game.main import Game
 
 game = Game()
 state = game.next_action(flap=True)  # start + first flap
@@ -42,7 +52,7 @@ for _ in range(200):
 **Same game class, interactive loop:**
 
 ```python
-from main import Game
+from game.main import Game
 
 Game().run()
 ```
