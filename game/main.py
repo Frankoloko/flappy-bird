@@ -86,6 +86,26 @@ class PipePair:
 
 @dataclass(frozen=True)
 class State:
+    """Snapshot of the game after one :meth:`Game.next_action` step.
+
+    Positions use window pixels (origin top-left), same as pygame.
+
+    Attributes:
+        game_state: ``"ready"`` (title), ``"playing"``, or ``"gameover"``.
+        score: Pipes cleared this run (0 on title / before first pipe).
+        frame_counter: Total frames advanced this session; drives idle/animation timing.
+        bird_x: Horizontal reference x for the bird (fixed play position, ~35% of window width).
+        bird_y: Vertical **center** of the bird (matches physics / hitbox).
+        bird_vel: Vertical velocity in px/frame (positive = falling, negative = moving up).
+        next_pipe_gap_center_y: Vertical center of the **next** gap ahead, or ``None`` if there is no
+            upcoming pipe (e.g. title screen or pipes not spawned yet).
+        next_pipe_gap_half: Half the gap height (distance from center to top/bottom opening); ``None``
+            if there is no next pipe.
+        next_pipe_distance_x: Horizontal offset from ``bird_x`` to the **left edge** of the next pipe
+            pair (``next_pipe.x - bird_x``). Can be negative if that edge is left of the anchor.
+            ``None`` if there is no next pipe.
+    """
+
     game_state: GameState
     score: int
     frame_counter: int
