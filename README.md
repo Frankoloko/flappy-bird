@@ -8,10 +8,10 @@ From the repository root:
 pip install -r requirements.txt
 ```
 
-The stepping demo at the repository root:
+Main run/testing script at the repository root:
 
 ```bash
-python next_action_demo.py
+python run.py
 ```
 
 ## Play normally
