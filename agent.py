@@ -20,4 +20,9 @@ class Agent:
         self.quality_table[state_hash] += 1
     
     def get_state_hash(self, state):
-        return
+        return (
+            state.bird_y,
+            state.bird_x,
+            state.next_pipe_gap_center_y,
+            state.next_pipe_distance_x,
+        )
