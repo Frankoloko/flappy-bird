@@ -7,9 +7,9 @@ import random
 
 class Agent:
     quality_table = {}
-    alpha = 0.1   # learning rate
-    gamma = 0.99  # future importance
-    epsilon = 1.0 # exploration chance
+    alpha = 0.1  # Learning rate (increase or decrease the learning change by this amount)
+    gamma = 0.99  # Future importance (how much to care about the future vs the current action)
+    epsilon = 1.0  # Exploration chance (decreases over time as it learns more and more)
 
     def export_agent(self):
         agents_dir = "./agent_runs"
@@ -44,7 +44,7 @@ class Agent:
 
         # Decrease epsilon
         self.epsilon *= 0.995
-        self.epsilon = max(0.05, self.epsilon)
+        self.epsilon = max(0.05, self.epsilon)  # epsilon min is 0.05
     
     def get_state_hash(self, state):
         tuple_data = (
@@ -62,5 +62,10 @@ class Agent:
             return random.choice([0, 1])
 
         # Don't explore random options, do what we know is best already
-        flap = self.quality_table[state_hash][0] < self.quality_table[state_hash][1]
-        return flap
+        if self.quality_table[state_hash][0] > self.quality_table[state_hash][1]:
+            action_index = 1
+        else:
+            action_index = 0
+
+        # Return the index of the action to take [X, Y]
+        return action_index

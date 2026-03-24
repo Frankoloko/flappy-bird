@@ -8,23 +8,22 @@ from agent import Agent
 
 ADD_PAUSES = False
 FRAME_DELAY_SECONDS = 1.0 / 30
-
+FLAP_ACTION_INDEX = 1
 
 def main() -> None:
     # Setup
     game = Game()
     agent = Agent()
-    take_action = True
-    state = game.take_action(flap=take_action)  # Start + first flap
-    agent.learn(state, action_taken=take_action)
+    state = game.take_action(flap=FLAP_ACTION_INDEX)  # Start + first flap
+    agent.learn(state, action_taken=FLAP_ACTION_INDEX)
     take_action = agent.choose_next_action(state)
 
     # Play
     if ADD_PAUSES:
         time.sleep(FRAME_DELAY_SECONDS)
-    for _ in range(5000):
+    for _ in range(10000):
         if state.game_state != "playing":
-            take_action = True  # Restart the game
+            take_action = FLAP_ACTION_INDEX  # Restart the game
         else:
             take_action = agent.choose_next_action(state)
 
