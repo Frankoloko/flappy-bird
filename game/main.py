@@ -84,6 +84,39 @@ class PipePair:
     passed: bool = False
 
 
+@dataclass(frozen=True)
+class State:
+    """Snapshot of the game after one :meth:`Game.next_action` step.
+
+    Positions use window pixels (origin top-left), same as pygame.
+
+    Attributes:
+        game_state: ``"ready"`` (title), ``"playing"``, or ``"gameover"``.
+        score: Pipes cleared this run (0 on title / before first pipe).
+        frame_counter: Total frames advanced this session; drives idle/animation timing.
+        bird_x: Horizontal reference x for the bird (fixed play position, ~35% of window width).
+        bird_y: Vertical **center** of the bird (matches physics / hitbox).
+        bird_vel: Vertical velocity in px/frame (positive = falling, negative = moving up).
+        next_pipe_gap_center_y: Vertical center of the **next** gap ahead, or ``None`` if there is no
+            upcoming pipe (e.g. title screen or pipes not spawned yet).
+        next_pipe_gap_half: Half the gap height (distance from center to top/bottom opening); ``None``
+            if there is no next pipe.
+        next_pipe_distance_x: Horizontal offset from ``bird_x`` to the **left edge** of the next pipe
+            pair (``next_pipe.x - bird_x``). Can be negative if that edge is left of the anchor.
+            ``None`` if there is no next pipe.
+    """
+
+    game_state: GameState
+    score: int
+    frame_counter: int
+    bird_x: float
+    bird_y: float
+    bird_vel: float
+    next_pipe_gap_center_y: Optional[float]
+    next_pipe_gap_half: Optional[float]
+    next_pipe_distance_x: Optional[float]
+
+
 class Game:
     def __init__(self) -> None:
         pygame.init()
@@ -283,10 +316,31 @@ class Game:
                 pygame.quit()
                 sys.exit(0)
 
-    def next_action(self, flap: bool) -> GameState:
+    def _build_state(self) -> State:
+        bird_x = WINDOW_W * 0.35
+        next_pipe: Optional[PipePair] = None
+        for pipe in self.pipes:
+            if pipe.x + self.pipe_w >= bird_x:
+                if next_pipe is None or pipe.x < next_pipe.x:
+                    next_pipe = pipe
+
+        return State(
+            game_state=self.state,
+            score=self.score,
+            frame_counter=self.frame_counter,
+            bird_x=bird_x,
+            bird_y=self.bird_y,
+            bird_vel=self.bird_vel,
+            next_pipe_gap_center_y=next_pipe.gap_center_y if next_pipe else None,
+            next_pipe_gap_half=next_pipe.gap_half if next_pipe else None,
+            next_pipe_distance_x=(next_pipe.x - bird_x) if next_pipe else None,
+        )
+
+    def next_action(self, flap: bool) -> State:
         """Step the game forward by one frame, optionally flapping. Redraws the window.
 
-        Returns the state after this step: ``"ready"``, ``"playing"``, or ``"gameover"``.
+        Returns a :class:`State` snapshot after this step.
+        ``state.game_state`` is one of ``"ready"``, ``"playing"``, or ``"gameover"``.
         After death, pass ``flap=True`` on a later step to return to the title screen (same as tap to retry).
 
         Use this for manual or scripted control; use :meth:`run` for normal real-time play.
@@ -294,7 +348,7 @@ class Game:
         self._poll_quit_events()
         self._step_frame(flap)
         self.draw()
-        return self.state
+        return self._build_state()
 
     def draw_score(self, y: int) -> None:
         s = str(self.score)

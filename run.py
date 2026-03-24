@@ -17,7 +17,7 @@ def main() -> None:
     state = game.next_action(flap=True)  # start + first flap
     time.sleep(FRAME_DELAY_SECONDS)
     for _ in range(200):
-        if state != "playing":
+        if state.game_state != "playing":
             should_flap = True
         else:
             should_flap = random.random() < RANDOM_FLAP_PROBABILITY
