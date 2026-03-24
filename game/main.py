@@ -86,7 +86,7 @@ class PipePair:
 
 @dataclass(frozen=True)
 class State:
-    """Snapshot of the game after one :meth:`Game.next_action` step.
+    """Snapshot of the game after one :meth:`Game.take_action` step.
 
     Positions use window pixels (origin top-left), same as pygame.
 
@@ -336,7 +336,7 @@ class Game:
             next_pipe_distance_x=(next_pipe.x - bird_x) if next_pipe else None,
         )
 
-    def next_action(self, flap: bool) -> State:
+    def take_action(self, flap: bool) -> State:
         """Step the game forward by one frame, optionally flapping. Redraws the window.
 
         Returns a :class:`State` snapshot after this step.

@@ -15,7 +15,7 @@ def main() -> None:
     game = Game()
     agent = Agent()
     take_action = True
-    state = game.next_action(flap=take_action)  # Start + first flap
+    state = game.take_action(flap=take_action)  # Start + first flap
     agent.learn(state, action_taken=take_action)
     take_action = agent.choose_next_action(state)
 
@@ -27,7 +27,7 @@ def main() -> None:
         else:
             take_action = agent.choose_next_action(state)
 
-        state = game.next_action(flap=take_action)
+        state = game.take_action(flap=take_action)
         agent.learn(state, action_taken=take_action)
         time.sleep(FRAME_DELAY_SECONDS)
 

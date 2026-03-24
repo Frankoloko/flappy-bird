@@ -6,14 +6,14 @@ alwaysApply: true
 # Naming and call style
 
 - **Variable names:** Avoid abbreviated names (`g`, `ctx`, `tmp`) unless they are extremely common and universal (e.g. loop index `i`, coordinates `x`/`y`). Prefer descriptive names such as `game` for a `Game` instance.
-- **Function calls:** When passing literals or when the parameter name adds clarity—especially boolean flags—use the **keyword** form (e.g. `next_action(flap=False)` not `next_action(False)`).
+- **Function calls:** When passing literals or when the parameter name adds clarity—especially boolean flags—use the **keyword** form (e.g. `take_action(flap=False)` not `take_action(False)`).
 
 ```python
 # Prefer
 game = Game()
-game.next_action(flap=True)
+game.take_action(flap=True)
 
 # Avoid
 g = Game()
-g.next_action(True)
+g.take_action(True)
 ```
