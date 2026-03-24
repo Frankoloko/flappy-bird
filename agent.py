@@ -26,7 +26,6 @@ class Agent:
     def get_state_hash(self, state):
         tuple_data = (
             int(state.bird_y),
-            int(state.bird_x),
             int(state.next_pipe_gap_center_y or 0),
             int(state.next_pipe_distance_x or 0),
         )
