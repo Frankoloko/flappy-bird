@@ -11,18 +11,21 @@ RANDOM_FLAP_PROBABILITY = 0.01
 
 
 def main() -> None:
+    # Setup
     game = Game()
     agent = Agent()
     take_action = True
-    state = game.next_action(flap=take_action)  # start + first flap
+    state = game.next_action(flap=take_action)  # Start + first flap
     agent.learn(state, action_taken=take_action)
 
+    # Play
     time.sleep(FRAME_DELAY_SECONDS)
-    for _ in range(100):
+    for _ in range(1000):
         if state.game_state != "playing":
-            take_action = True
+            take_action = True  # Restart the game
         else:
-            take_action = random.random() < RANDOM_FLAP_PROBABILITY
+            take_action = agent.choose_next_action(state)
+
         state = game.next_action(flap=take_action)
         agent.learn(state, action_taken=take_action)
         time.sleep(FRAME_DELAY_SECONDS)

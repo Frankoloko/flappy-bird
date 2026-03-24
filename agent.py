@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 import os
+import random
 
 alpha = 0.1   # learning rate
 gamma = 0.99  # future importance
