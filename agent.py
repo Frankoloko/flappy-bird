@@ -2,6 +2,10 @@ import json
 from datetime import datetime
 import os
 
+alpha = 0.1   # learning rate
+gamma = 0.99  # future importance
+epsilon = 1.0 # exploration
+
 class Agent:
     quality_table = {}
 
@@ -17,11 +21,24 @@ class Agent:
         with open(agent_path, 'r') as file:
             self.quality_table = json.load(file)
 
-    def learn(self, state):
+    def learn(self, state, action_taken):
         state_hash = self.get_state_hash(state)
+        
+        # Initialize key
         if state_hash not in self.quality_table:
             self.quality_table[state_hash] = [0, 0]
-        # self.quality_table[state_hash] = [0, 1]
+
+        if state.game_state == "gameover":
+            reward = +1
+        else:
+            reward = -100
+
+        self.quality_table[state_hash][action_taken] += alpha * (
+            reward +
+            gamma *
+            max(self.quality_table[state_hash])
+            - self.quality_table[state_hash][action_taken]
+        )
     
     def get_state_hash(self, state):
         tuple_data = (
