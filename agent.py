@@ -3,12 +3,13 @@ from datetime import datetime
 import os
 import random
 
-alpha = 0.1   # learning rate
-gamma = 0.99  # future importance
-epsilon = 1.0 # exploration
+
 
 class Agent:
     quality_table = {}
+    alpha = 0.1   # learning rate
+    gamma = 0.99  # future importance
+    epsilon = 1.0 # exploration chance
 
     def export_agent(self):
         agents_dir = "./agent_runs"
@@ -34,12 +35,16 @@ class Agent:
         else:
             reward = +1
 
-        self.quality_table[state_hash][action_taken] += alpha * (
+        self.quality_table[state_hash][action_taken] += self.alpha * (
             reward +
-            gamma *
+            self.gamma *
             max(self.quality_table[state_hash])
             - self.quality_table[state_hash][action_taken]
         )
+
+        # Decrease epsilon
+        self.epsilon *= 0.995
+        self.epsilon = max(0.05, self.epsilon)
     
     def get_state_hash(self, state):
         tuple_data = (
@@ -50,10 +55,12 @@ class Agent:
         return str(tuple_data)
 
     def choose_next_action(self, state):
+        state_hash = self.get_state_hash(state)
+
         # Check if we should explore random options a bit
-        if random.random() < epsilon:
+        if random.random() < self.epsilon:
             return random.choice([0, 1])
 
         # Don't explore random options, do what we know is best already
-        flap = self.quality_table[state][0] < self.quality_table[state][1]
+        flap = self.quality_table[state_hash][0] < self.quality_table[state_hash][1]
         return flap
