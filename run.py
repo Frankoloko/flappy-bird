@@ -21,6 +21,7 @@ else:
 
 def main() -> None:
     # Setup
+    highest_score = -99
     game = Game()
     agent = Agent()
     state = game.take_action(flap=FLAP_ACTION_INDEX)  # Start + first flap
@@ -37,12 +38,14 @@ def main() -> None:
             take_action = agent.choose_next_action(state)
 
         state = game.take_action(flap=take_action)
+        if state.score > highest_score:
+            highest_score = state.score
         agent.learn(state, action_taken=take_action)
         if ADD_PAUSES:
             time.sleep(FRAME_DELAY_SECONDS)
 
     agent.export_agent()
-    print(f"Score: {state.score}")
+    print(f"Highest Score: {highest_score}")
 
 
 if __name__ == "__main__":

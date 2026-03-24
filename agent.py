@@ -63,7 +63,7 @@ class Agent:
             return random.choice([0, 1])
 
         # Don't explore random options, do what we know is best already
-        if self.quality_table[state_hash][0] > self.quality_table[state_hash][1]:
+        if self.quality_table[state_hash][0] < self.quality_table[state_hash][1]:
             action_index = 1
         else:
             action_index = 0
