@@ -23,24 +23,34 @@ class Agent:
         with open(agent_path, 'r') as file:
             self.quality_table = json.load(file)
 
-    def learn(self, state, action_taken):
-        state_hash = self.get_state_hash(state)
+    def learn(self, before_action_state, action_taken, after_action_state):
+        """Learn 
+
+        The logic essentially comes down to:
+        new_action = old_action + adjustment
+        Where adjustment == reward + (future_importants * new_action) - old_action
+
+        """
+        before_action_state_hash = self.get_state_hash(before_action_state)
+        after_action_state_hash = self.get_state_hash(after_action_state)
         
         # Initialize key
-        if state_hash not in self.quality_table:
-            self.quality_table[state_hash] = [0, 0]
+        if before_action_state_hash not in self.quality_table:
+            self.quality_table[before_action_state_hash] = [0, 0]
 
-        if state.game_state == "gameover":
+        if before_action_state.game_state == "gameover":
             reward = -100
         else:
             reward = +1
 
-        self.quality_table[state_hash][action_taken] += self.alpha * (
-            reward +
-            self.gamma *
-            max(self.quality_table[state_hash])
-            - self.quality_table[state_hash][action_taken]
-        )
+        before_state = self.quality_table[before_action_state_hash]
+        after_state = self.quality_table[after_action_state_hash]
+
+        # correction = reward + future_importance + (before or after correctness)
+        correction = reward + self.gamma * max(after_state) - before_state[action_taken]
+
+        # new_action = learning_rate * correction
+        before_state[action_taken] += self.alpha * correction
 
         # Decrease epsilon
         self.epsilon *= 0.995
@@ -49,9 +59,9 @@ class Agent:
     def get_state_hash(self, state):
         tuple_data = (
             int(state.bird_y / 100),
-            int((state.bird_vel or 0) / 100),
+            int((state.bird_vel or 0)),
             int((state.next_pipe_gap_center_y or 0) / 100),
-            int((state.next_pipe_distance_x or 0) / 100),
+            int((state.next_pipe_distance_x or 0) / 10),
         )
         return str(tuple_data)
 
@@ -60,6 +70,9 @@ class Agent:
 
         # Check if we should explore random options a bit
         if random.random() < self.epsilon:
+            return random.choice([0, 1])
+
+        if state_hash not in self.quality_table:
             return random.choice([0, 1])
 
         # Don't explore random options, do what we know is best already
