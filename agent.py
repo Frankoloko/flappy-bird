@@ -30,3 +30,12 @@ class Agent:
             int(state.next_pipe_distance_x or 0),
         )
         return str(tuple_data)
+
+    def choose_next_action(self, state):
+        # Check if we should explore random options a bit
+        if random.random() < epsilon:
+            return random.choice([0, 1])
+
+        # Don't explore random options, do what we know is best already
+        flap = self.quality_table[state][0] > self.quality_table[state][1]
+        return flap
