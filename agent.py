@@ -48,9 +48,10 @@ class Agent:
     
     def get_state_hash(self, state):
         tuple_data = (
-            int(state.bird_y),
-            int(state.next_pipe_gap_center_y or 0),
-            int(state.next_pipe_distance_x or 0),
+            int(state.bird_y / 100),
+            int((state.bird_vel or 0) / 100),
+            int((state.next_pipe_gap_center_y or 0) / 100),
+            int((state.next_pipe_distance_x or 0) / 100),
         )
         return str(tuple_data)
 

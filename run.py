@@ -6,9 +6,18 @@ import time
 from game.main import Game
 from agent import Agent
 
-ADD_PAUSES = False
+HEADLESS = True
+
 FRAME_DELAY_SECONDS = 1.0 / 30
 FLAP_ACTION_INDEX = 1
+ADD_PAUSES = True
+
+if HEADLESS:
+    ADD_PAUSES = False
+    RUNS = 10000
+else:
+    ADD_PAUSES = True
+    RUNS = 100
 
 def main() -> None:
     # Setup
@@ -21,7 +30,7 @@ def main() -> None:
     # Play
     if ADD_PAUSES:
         time.sleep(FRAME_DELAY_SECONDS)
-    for _ in range(10000):
+    for _ in range(RUNS):
         if state.game_state != "playing":
             take_action = FLAP_ACTION_INDEX  # Restart the game
         else:
