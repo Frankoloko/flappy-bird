@@ -17,10 +17,11 @@ def main() -> None:
     take_action = True
     state = game.next_action(flap=take_action)  # Start + first flap
     agent.learn(state, action_taken=take_action)
+    take_action = agent.choose_next_action(state)
 
     # Play
     time.sleep(FRAME_DELAY_SECONDS)
-    for _ in range(1000):
+    for _ in range(100):
         if state.game_state != "playing":
             take_action = True  # Restart the game
         else:
@@ -31,6 +32,7 @@ def main() -> None:
         time.sleep(FRAME_DELAY_SECONDS)
 
     agent.export_agent()
+    print(f"Score: {state.score}")
 
 
 if __name__ == "__main__":

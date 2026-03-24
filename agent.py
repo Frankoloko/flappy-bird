@@ -30,9 +30,9 @@ class Agent:
             self.quality_table[state_hash] = [0, 0]
 
         if state.game_state == "gameover":
-            reward = +1
-        else:
             reward = -100
+        else:
+            reward = +1
 
         self.quality_table[state_hash][action_taken] += alpha * (
             reward +
@@ -55,5 +55,5 @@ class Agent:
             return random.choice([0, 1])
 
         # Don't explore random options, do what we know is best already
-        flap = self.quality_table[state][0] > self.quality_table[state][1]
+        flap = self.quality_table[state][0] < self.quality_table[state][1]
         return flap
