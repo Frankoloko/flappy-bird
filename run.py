@@ -6,8 +6,6 @@ from game.main import Game
 from agent import Agent
 
 TRAIN_MODE = True
-LOAD_AGENT = None
-LOAD_AGENT = "agent_2026-03-24_21-06-09.json"
 
 def main() -> None:
     # Setup
@@ -18,17 +16,18 @@ def main() -> None:
     flap_action_index = 1
     game = Game()
     agent = Agent()
-    if LOAD_AGENT:
-        agent.import_agent(LOAD_AGENT)
+    agent.load_previous_agent()
     before_state = game.take_action(flap=flap_action_index)  # Start + first flap
 
     if TRAIN_MODE:
         add_pauses = False
-        frames = 100 # < 1min
-        frames = 10000 # < 1min
+        frames = 10000 # 18s
+        frames = 100000 # 2min
+        frames = 500000 # 11min
+        # frames = 1000000 # 22min
     else:
         add_pauses = True
-        frames = 10
+        frames = 100
 
     # The Q learning model works like this
     # 1. Get the current state
@@ -44,7 +43,12 @@ def main() -> None:
     # We adjust step 4 just slightly, otherwise you would over adjust, like a driver learning to ALWAYS turn left when a car comes from the right
 
     # Play
-    for _ in range(frames):
+    printed = False
+    for current_frame in range(frames):
+        if not printed and agent.epsilon == 0.05:
+            printed = True
+            print(f"Reached min epsilon: {current_frame}")
+
         if before_state.game_state == "ready":
             take_action = flap_action_index  # Restart the game
         elif before_state.game_state == "gameover":
@@ -79,7 +83,7 @@ def main() -> None:
     print(f"Time elapsed: {hours:02d}:{minutes:02d}")
 
     print(f"Deaths: {death_count}")
-    print(f"Highest Score: {highest_score}")
+    print(f"Highest score: {highest_score}")
 
 
 if __name__ == "__main__":

@@ -24,8 +24,7 @@ class Agent:
 
     def load_previous_agent(self):
         agents = os.listdir(self.agents_dir)
-        latest_file = self.agents_file_path.format(agents[-1])
-        self.import_agent(latest_file)
+        self.import_agent(agents[-1])
 
     def learn(self, before_action_state, action_taken, after_action_state):
         """Learn 
