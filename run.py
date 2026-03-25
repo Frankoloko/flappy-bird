@@ -4,11 +4,13 @@ import random
 import time
 from game.main import Game
 from agent import Agent
+from pprint import pprint
 
-TRAIN_MODE = True
+TRAIN_MODE = False
 
 def main() -> None:
     # Setup
+    log_info = {}
     start_time = time.time()
     frame_delay_seconds = 1.0 / 30
     highest_score = -99
@@ -21,13 +23,13 @@ def main() -> None:
 
     if TRAIN_MODE:
         add_pauses = False
-        frames = 10000 # 18s
+        frames = 10000 # 0min
         frames = 100000 # 2min
         frames = 500000 # 11min
         # frames = 1000000 # 22min
     else:
         add_pauses = True
-        frames = 100
+        frames = 1000  # 0min
 
     # The Q learning model works like this
     # 1. Get the current state
@@ -43,11 +45,11 @@ def main() -> None:
     # We adjust step 4 just slightly, otherwise you would over adjust, like a driver learning to ALWAYS turn left when a car comes from the right
 
     # Play
-    printed = False
+    found_min_epsilon = False
     for current_frame in range(frames):
-        if not printed and agent.epsilon == 0.05:
-            printed = True
-            print(f"Reached min epsilon: {current_frame}")
+        if not found_min_epsilon and agent.epsilon == 0.05:
+            found_min_epsilon = True
+            log_info["Reached Min Episilon On Frame"] = current_frame
 
         if before_state.game_state == "ready":
             take_action = flap_action_index  # Restart the game
@@ -80,10 +82,11 @@ def main() -> None:
     elapsed = int(time.time() - start_time)
     hours = elapsed // 3600
     minutes = (elapsed % 3600) // 60
-    print(f"Time elapsed: {hours:02d}:{minutes:02d}")
-
-    print(f"Deaths: {death_count}")
-    print(f"Highest score: {highest_score}")
+    log_info["Time Elapsed"] = f"{hours:02d}:{minutes:02d}"
+    log_info["Deaths"] = death_count
+    log_info["Highest Score"] = highest_score
+    log_info["Ran Frames"] = frames
+    pprint(log_info, indent=4)
 
 
 if __name__ == "__main__":
