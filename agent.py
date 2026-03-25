@@ -67,8 +67,8 @@ class Agent:
         correction = reward + self.gamma * max(after_state) - before_state[action_taken]
         before_state[action_taken] += self.alpha * correction
 
-        self.epsilon *= 0.99999
-        self.epsilon = max(0.05, self.epsilon)
+        # self.epsilon *= 0.99999
+        # self.epsilon = max(0.05, self.epsilon)
     
     def get_state_hash(self, state):
         if state.next_pipe_gap_center_y is not None:
@@ -86,10 +86,10 @@ class Agent:
     def choose_next_action(self, state):
         state_hash = self.get_state_hash(state)
 
-        if random.random() < self.epsilon:
-            # Weight exploration: flap only 30% of random actions, not 50%
-            # Otherwise the bird just flies up and dies before learning anything
-            return 1 if random.random() < 0.1 else 0
+        # if random.random() < self.epsilon:
+        #     # Weight exploration: flap only 30% of random actions, not 50%
+        #     # Otherwise the bird just flies up and dies before learning anything
+        #     return 1 if random.random() < 0.1 else 0
 
         if state_hash not in self.quality_table:
             return 1 if random.random() < 0.1 else 0

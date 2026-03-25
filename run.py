@@ -25,7 +25,7 @@ def main() -> None:
         add_pauses = False
         frames = 10000 # 0min
         frames = 100000 # 2min
-        frames = 500000 # 11min
+        # frames = 500000 # 11min
         # frames = 1000000 # 22min
     else:
         add_pauses = True
@@ -46,16 +46,21 @@ def main() -> None:
 
     # Play
     found_min_epsilon = False
+    log_info["runs"] = []
     for current_frame in range(frames):
-        if not found_min_epsilon and agent.epsilon == 0.05:
-            found_min_epsilon = True
-            log_info["Reached Min Episilon On Frame"] = current_frame
+        # if not found_min_epsilon and agent.epsilon == 0.05:
+        #     found_min_epsilon = True
+        #     log_info["Reached Min Episilon On Frame"] = current_frame
 
         if before_state.game_state == "ready":
             take_action = flap_action_index  # Restart the game
         elif before_state.game_state == "gameover":
             take_action = flap_action_index  # Restart the game
             death_count += 1
+            log_info["runs"].append({
+                "run": death_count,
+                "score": before_state.score,
+            })
         elif before_state.game_state == "playing":
             take_action = agent.choose_next_action(before_state)
 
@@ -86,6 +91,14 @@ def main() -> None:
     log_info["Deaths"] = death_count
     log_info["Highest Score"] = highest_score
     log_info["Ran Frames"] = frames
+    log_info["Q Table Length"] = len(agent.quality_table)
+
+    total_score = 0
+    for run in log_info["runs"]:
+        total_score += run["score"]
+    log_info["Average Score Per Run"] = int(total_score / len(log_info["runs"]))
+
+    del log_info["runs"]  # I just don't want to print this right now
     pprint(log_info, indent=4)
 
 
