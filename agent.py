@@ -31,36 +31,51 @@ class Agent:
         Where adjustment == reward + (future_importants * new_action) - old_action
 
         """
+        if after_action_state.game_state == "gameover":
+            reward = -100
+            if before_action_state.next_pipe_gap_center_y is not None:
+                dist = before_action_state.bird_y - before_action_state.next_pipe_gap_center_y
+                if dist < -80:  # Died flying too high
+                    reward -= 50
+                elif dist > 80:  # Died flying too low
+                    reward -= 50
+        elif after_action_state.next_pipe_gap_center_y is not None:
+            dist = abs(after_action_state.bird_y - after_action_state.next_pipe_gap_center_y)
+            reward = max(1, 10 - int(dist / 20))
+            if dist > 100:
+                reward -= 5
+        else:
+            reward = 1
+
+        if after_action_state.score > before_action_state.score:
+            reward += 10  # Was 50 — too high, was teaching the agent to spam flap
+
         before_action_state_hash = self.get_state_hash(before_action_state)
         after_action_state_hash = self.get_state_hash(after_action_state)
-        
-        # Initialize key
+
         if before_action_state_hash not in self.quality_table:
             self.quality_table[before_action_state_hash] = [0, 0]
-
-        if before_action_state.game_state == "gameover":
-            reward = -100
-        else:
-            reward = +1
+        if after_action_state_hash not in self.quality_table:
+            self.quality_table[after_action_state_hash] = [0, 0]
 
         before_state = self.quality_table[before_action_state_hash]
         after_state = self.quality_table[after_action_state_hash]
 
-        # correction = reward + future_importance + (before or after correctness)
         correction = reward + self.gamma * max(after_state) - before_state[action_taken]
-
-        # new_action = learning_rate * correction
         before_state[action_taken] += self.alpha * correction
 
-        # Decrease epsilon
-        self.epsilon *= 0.995
-        self.epsilon = max(0.05, self.epsilon)  # epsilon min is 0.05
+        self.epsilon *= 0.99999
+        self.epsilon = max(0.05, self.epsilon)
     
     def get_state_hash(self, state):
+        if state.next_pipe_gap_center_y is not None:
+            relative_y = int((state.bird_y - state.next_pipe_gap_center_y) / 10)
+        else:
+            relative_y = 0
+
         tuple_data = (
-            int(state.bird_y / 100),
-            int((state.bird_vel or 0)),
-            int((state.next_pipe_gap_center_y or 0) / 100),
+            relative_y,
+            int(round(state.bird_vel)),
             int((state.next_pipe_distance_x or 0) / 10),
         )
         return str(tuple_data)
@@ -68,18 +83,12 @@ class Agent:
     def choose_next_action(self, state):
         state_hash = self.get_state_hash(state)
 
-        # Check if we should explore random options a bit
         if random.random() < self.epsilon:
-            return random.choice([0, 1])
+            # Weight exploration: flap only 30% of random actions, not 50%
+            # Otherwise the bird just flies up and dies before learning anything
+            return 1 if random.random() < 0.1 else 0
 
         if state_hash not in self.quality_table:
-            return random.choice([0, 1])
+            return 1 if random.random() < 0.1 else 0
 
-        # Don't explore random options, do what we know is best already
-        if self.quality_table[state_hash][0] < self.quality_table[state_hash][1]:
-            action_index = 1
-        else:
-            action_index = 0
-
-        # Return the index of the action to take [X, Y]
-        return action_index
+        return 1 if self.quality_table[state_hash][1] > self.quality_table[state_hash][0] else 0
