@@ -4,24 +4,28 @@ import os
 import random
 
 
-
 class Agent:
     quality_table = {}
     alpha = 0.1  # Learning rate (increase or decrease the learning change by this amount)
     gamma = 0.99  # Future importance (how much to care about the future vs the current action)
     epsilon = 1.0  # Exploration chance (decreases over time as it learns more and more)
+    agents_dir = "./agent_runs"
+    agents_file_path = agents_dir + "/{}"
 
     def export_agent(self):
-        agents_dir = "./agent_runs"
-        os.makedirs(agents_dir, exist_ok=True)
+        os.makedirs(self.agents_dir, exist_ok=True)
         filename = f"agent_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.json"
-        agent_path = f"./{agents_dir}/{filename}"
-        with open(agent_path, 'w') as file:
+        with open(self.agents_file_path.format(filename), 'w') as file:
             json.dump(self.quality_table, file, indent=4)
 
-    def import_agent(self, agent_path: str):
-        with open(agent_path, 'r') as file:
+    def import_agent(self, filename: str):
+        with open(self.agents_file_path.format(filename), 'r') as file:
             self.quality_table = json.load(file)
+
+    def load_previous_agent(self):
+        agents = os.listdir(self.agents_dir)
+        latest_file = self.agents_file_path.format(agents[-1])
+        self.import_agent(latest_file)
 
     def learn(self, before_action_state, action_taken, after_action_state):
         """Learn 
@@ -69,14 +73,14 @@ class Agent:
     
     def get_state_hash(self, state):
         if state.next_pipe_gap_center_y is not None:
-            relative_y = int((state.bird_y - state.next_pipe_gap_center_y) / 10)
+            relative_y = int((state.bird_y - state.next_pipe_gap_center_y) / 30)
         else:
             relative_y = 0
 
         tuple_data = (
             relative_y,
-            int(round(state.bird_vel)),
-            int((state.next_pipe_distance_x or 0) / 10),
+            int(round(state.bird_vel / 2)),
+            int((state.next_pipe_distance_x or 0) / 20),
         )
         return str(tuple_data)
 

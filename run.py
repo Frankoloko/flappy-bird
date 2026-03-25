@@ -1,29 +1,34 @@
 from __future__ import annotations
-
+import time
 import random
 import time
-
 from game.main import Game
 from agent import Agent
 
-HEADLESS = True
-
-FRAME_DELAY_SECONDS = 1.0 / 30
-ADD_PAUSES = True
-if HEADLESS:
-    ADD_PAUSES = False
-    RUNS = 5000000
-else:
-    ADD_PAUSES = True
-    RUNS = 100
+TRAIN_MODE = True
+LOAD_AGENT = None
+LOAD_AGENT = "agent_2026-03-24_21-06-09.json"
 
 def main() -> None:
     # Setup
+    start_time = time.time()
+    frame_delay_seconds = 1.0 / 30
     highest_score = -99
+    death_count = 0
     flap_action_index = 1
     game = Game()
     agent = Agent()
+    if LOAD_AGENT:
+        agent.import_agent(LOAD_AGENT)
     before_state = game.take_action(flap=flap_action_index)  # Start + first flap
+
+    if TRAIN_MODE:
+        add_pauses = False
+        frames = 100 # < 1min
+        frames = 10000 # < 1min
+    else:
+        add_pauses = True
+        frames = 10
 
     # The Q learning model works like this
     # 1. Get the current state
@@ -39,10 +44,13 @@ def main() -> None:
     # We adjust step 4 just slightly, otherwise you would over adjust, like a driver learning to ALWAYS turn left when a car comes from the right
 
     # Play
-    for _ in range(RUNS):
+    for _ in range(frames):
         if before_state.game_state == "ready":
             take_action = flap_action_index  # Restart the game
-        else:
+        elif before_state.game_state == "gameover":
+            take_action = flap_action_index  # Restart the game
+            death_count += 1
+        elif before_state.game_state == "playing":
             take_action = agent.choose_next_action(before_state)
 
         after_state = game.take_action(flap=take_action)
@@ -59,10 +67,18 @@ def main() -> None:
 
         if after_state.score > highest_score:
             highest_score = after_state.score
-        if ADD_PAUSES:
-            time.sleep(FRAME_DELAY_SECONDS)
+
+        if add_pauses:
+            time.sleep(frame_delay_seconds)
 
     agent.export_agent()
+
+    elapsed = int(time.time() - start_time)
+    hours = elapsed // 3600
+    minutes = (elapsed % 3600) // 60
+    print(f"Time elapsed: {hours:02d}:{minutes:02d}")
+
+    print(f"Deaths: {death_count}")
     print(f"Highest Score: {highest_score}")
 
 
