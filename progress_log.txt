@@ -1,0 +1,989 @@
+{
+    "Time Elapsed": "00:00",
+    "Deaths": 720,
+    "Highest Score": 209,
+    "Ran Frames": 1000000,
+    "Q Table Length": 3877593,
+    "Frames Per Death": 1388.888888888889,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:00",
+    "Deaths": 720,
+    "Highest Score": 162,
+    "Ran Frames": 1000000,
+    "Q Table Length": 3877593,
+    "Frames Per Death": 1388.888888888889,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:28",
+    "Deaths": 72476,
+    "Highest Score": 268,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3877725,
+    "Frames Per Death": 1379.7670953143108,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72032,
+    "Highest Score": 257,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3877866,
+    "Frames Per Death": 1388.2718791648156,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 72892,
+    "Highest Score": 251,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3877951,
+    "Frames Per Death": 1371.8926631180377,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 72382,
+    "Highest Score": 297,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878046,
+    "Frames Per Death": 1381.5589511204444,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:30",
+    "Deaths": 72093,
+    "Highest Score": 286,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878143,
+    "Frames Per Death": 1387.0972216442651,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 72448,
+    "Highest Score": 245,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878233,
+    "Frames Per Death": 1380.3003533568904,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:30",
+    "Deaths": 72022,
+    "Highest Score": 251,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878276,
+    "Frames Per Death": 1388.464635805726,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:30",
+    "Deaths": 72179,
+    "Highest Score": 265,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878334,
+    "Frames Per Death": 1385.4445198742017,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:30",
+    "Deaths": 72493,
+    "Highest Score": 286,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878393,
+    "Frames Per Death": 1379.443532478998,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 72602,
+    "Highest Score": 270,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878511,
+    "Frames Per Death": 1377.3725241728878,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:27",
+    "Deaths": 72126,
+    "Highest Score": 275,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878555,
+    "Frames Per Death": 1386.4625793749826,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72328,
+    "Highest Score": 251,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878643,
+    "Frames Per Death": 1382.5904214135605,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:24",
+    "Deaths": 72441,
+    "Highest Score": 232,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878685,
+    "Frames Per Death": 1380.4337322786819,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:25",
+    "Deaths": 72213,
+    "Highest Score": 216,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878835,
+    "Frames Per Death": 1384.7922119286002,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 71609,
+    "Highest Score": 284,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878903,
+    "Frames Per Death": 1396.472510438632,
+    "Average Score Per Run": 19
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 72298,
+    "Highest Score": 230,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3878982,
+    "Frames Per Death": 1383.1641262552214,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:28",
+    "Deaths": 72071,
+    "Highest Score": 289,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879043,
+    "Frames Per Death": 1387.5206393695107,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71948,
+    "Highest Score": 264,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879101,
+    "Frames Per Death": 1389.892700283538,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:27",
+    "Deaths": 72232,
+    "Highest Score": 256,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879162,
+    "Frames Per Death": 1384.4279543692546,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:28",
+    "Deaths": 72208,
+    "Highest Score": 279,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879201,
+    "Frames Per Death": 1384.888101041436,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 72350,
+    "Highest Score": 305,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879277,
+    "Frames Per Death": 1382.1700069108501,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:30",
+    "Deaths": 72167,
+    "Highest Score": 286,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879314,
+    "Frames Per Death": 1385.6748929566145,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:30",
+    "Deaths": 71793,
+    "Highest Score": 265,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879352,
+    "Frames Per Death": 1392.8934575794297,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:30",
+    "Deaths": 72024,
+    "Highest Score": 250,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879392,
+    "Frames Per Death": 1388.4260801954904,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 71910,
+    "Highest Score": 220,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879453,
+    "Frames Per Death": 1390.6271728549575,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 72526,
+    "Highest Score": 265,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879514,
+    "Frames Per Death": 1378.815872928329,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 72047,
+    "Highest Score": 235,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879578,
+    "Frames Per Death": 1387.9828445320416,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 72209,
+    "Highest Score": 258,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879619,
+    "Frames Per Death": 1384.8689221565178,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 72038,
+    "Highest Score": 300,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879646,
+    "Frames Per Death": 1388.1562508675977,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72530,
+    "Highest Score": 300,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879729,
+    "Frames Per Death": 1378.7398317937404,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 71653,
+    "Highest Score": 258,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879827,
+    "Frames Per Death": 1395.6149777399412,
+    "Average Score Per Run": 19
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 72238,
+    "Highest Score": 272,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879880,
+    "Frames Per Death": 1384.3129654752347,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 71934,
+    "Highest Score": 261,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3879948,
+    "Frames Per Death": 1390.1632051602858,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 72410,
+    "Highest Score": 267,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880035,
+    "Frames Per Death": 1381.0247203424942,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 72263,
+    "Highest Score": 242,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880144,
+    "Frames Per Death": 1383.8340506206496,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:30",
+    "Deaths": 72421,
+    "Highest Score": 220,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880234,
+    "Frames Per Death": 1380.814956987614,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 72027,
+    "Highest Score": 272,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880282,
+    "Frames Per Death": 1388.3682507948408,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 72275,
+    "Highest Score": 286,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880358,
+    "Frames Per Death": 1383.6042891732964,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 72078,
+    "Highest Score": 282,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880431,
+    "Frames Per Death": 1387.3858875107521,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 72222,
+    "Highest Score": 228,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880466,
+    "Frames Per Death": 1384.6196449835231,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 72471,
+    "Highest Score": 237,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880539,
+    "Frames Per Death": 1379.8622897434836,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 71431,
+    "Highest Score": 314,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880559,
+    "Frames Per Death": 1399.952401618345,
+    "Average Score Per Run": 19
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 72129,
+    "Highest Score": 237,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880668,
+    "Frames Per Death": 1386.4049134190132,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:29",
+    "Deaths": 72291,
+    "Highest Score": 262,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880762,
+    "Frames Per Death": 1383.2980592328229,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:27",
+    "Deaths": 71671,
+    "Highest Score": 283,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880875,
+    "Frames Per Death": 1395.2644723807398,
+    "Average Score Per Run": 19
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71834,
+    "Highest Score": 247,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880952,
+    "Frames Per Death": 1392.0984492023276,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72062,
+    "Highest Score": 321,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3880989,
+    "Frames Per Death": 1387.6939302267492,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72194,
+    "Highest Score": 233,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881059,
+    "Frames Per Death": 1385.1566612183838,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72287,
+    "Highest Score": 249,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881104,
+    "Frames Per Death": 1383.3746040090195,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72028,
+    "Highest Score": 307,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881166,
+    "Frames Per Death": 1388.348975398456,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72357,
+    "Highest Score": 270,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881213,
+    "Frames Per Death": 1382.036292273035,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71773,
+    "Highest Score": 272,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881264,
+    "Frames Per Death": 1393.2815961433967,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71801,
+    "Highest Score": 274,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881318,
+    "Frames Per Death": 1392.738262698291,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71765,
+    "Highest Score": 281,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881352,
+    "Frames Per Death": 1393.4369121438026,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72273,
+    "Highest Score": 268,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881471,
+    "Frames Per Death": 1383.6425774493932,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71907,
+    "Highest Score": 282,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881545,
+    "Frames Per Death": 1390.6851905934054,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71698,
+    "Highest Score": 306,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881595,
+    "Frames Per Death": 1394.7390443248069,
+    "Average Score Per Run": 19
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72063,
+    "Highest Score": 293,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881637,
+    "Frames Per Death": 1387.674673549533,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71508,
+    "Highest Score": 284,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881680,
+    "Frames Per Death": 1398.4449292386867,
+    "Average Score Per Run": 19
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72019,
+    "Highest Score": 240,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881749,
+    "Frames Per Death": 1388.5224732362294,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72352,
+    "Highest Score": 242,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881785,
+    "Frames Per Death": 1382.1318000884564,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71577,
+    "Highest Score": 258,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881833,
+    "Frames Per Death": 1397.09683278148,
+    "Average Score Per Run": 19
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72123,
+    "Highest Score": 258,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881882,
+    "Frames Per Death": 1386.520250128253,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 72443,
+    "Highest Score": 299,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881929,
+    "Frames Per Death": 1380.395621385089,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71886,
+    "Highest Score": 251,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3881980,
+    "Frames Per Death": 1391.0914503519462,
+    "Average Score Per Run": 18
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71623,
+    "Highest Score": 255,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3882015,
+    "Frames Per Death": 1396.1995448389484,
+    "Average Score Per Run": 19
+}
+{
+    "Time Elapsed": "00:26",
+    "Deaths": 71789,
+    "Highest Score": 237,
+    "Ran Frames": 100000000,
+    "Q Table Length": 3882061,
+    "Frames Per Death": 1392.9710679909178,
+    "Average Score Per Run": 18
+}
+====================================================================================================
+From here, I added back a 0.05 fixed epsilon
+====================================================================================================
+{
+    "Time Elapsed": "00:27",
+    "Deaths": 430672,
+    "Highest Score": 47,
+    "Ran Frames": 100000000,
+    "Q Table Length": 5061516,
+    "Frames Per Death": 232.19526693167887,
+    "Average Score Per Run": 2
+}
+{
+    "Time Elapsed": "00:27",
+    "Deaths": 414403,
+    "Highest Score": 51,
+    "Ran Frames": 100000000,
+    "Q Table Length": 5220298,
+    "Frames Per Death": 241.3109943702145,
+    "Average Score Per Run": 2
+}
+{
+    "Time Elapsed": "00:31",
+    "Deaths": 402701,
+    "Highest Score": 56,
+    "Ran Frames": 100000000,
+    "Q Table Length": 5303571,
+    "Frames Per Death": 248.32319760815096,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:32",
+    "Deaths": 394748,
+    "Highest Score": 59,
+    "Ran Frames": 100000000,
+    "Q Table Length": 5360114,
+    "Frames Per Death": 253.3261726468532,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:32",
+    "Deaths": 388674,
+    "Highest Score": 56,
+    "Ran Frames": 100000000,
+    "Q Table Length": 5403277,
+    "Frames Per Death": 257.28502549694605,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:33",
+    "Deaths": 384561,
+    "Highest Score": 60,
+    "Ran Frames": 100000000,
+    "Q Table Length": 5438786,
+    "Frames Per Death": 260.0367691991648,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:32",
+    "Deaths": 380151,
+    "Highest Score": 59,
+    "Ran Frames": 100000000,
+    "Q Table Length": 5468784,
+    "Frames Per Death": 263.0533656362866,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:33",
+    "Deaths": 375305,
+    "Highest Score": 60,
+    "Ran Frames": 100000000,
+    "Q Table Length": 5494773,
+    "Frames Per Death": 266.44995403738295,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:32",
+    "Deaths": 371803,
+    "Highest Score": 58,
+    "Ran Frames": 100000000,
+    "Q Table Length": 5517077,
+    "Frames Per Death": 268.95963722724133,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:40",
+    "Deaths": 1817358,
+    "Highest Score": 5,
+    "Ran Frames": 100000000,
+    "Q Table Length": 58,
+    "Frames Per Death": 55.02493179659704,
+    "Average Score Per Run": 0
+}
+{
+    "Time Elapsed": "00:40",
+    "Deaths": 962808,
+    "Highest Score": 60,
+    "Ran Frames": 100000000,
+    "Q Table Length": 67,
+    "Frames Per Death": 103.86286777841481,
+    "Average Score Per Run": 1
+}
+{
+    "Time Elapsed": "00:44",
+    "Deaths": 309335,
+    "Highest Score": 79,
+    "Ran Frames": 100000000,
+    "Q Table Length": 422,
+    "Frames Per Death": 323.2741202903002,
+    "Average Score Per Run": 4
+}
+{
+    "Time Elapsed": "00:44",
+    "Deaths": 233712,
+    "Highest Score": 97,
+    "Ran Frames": 100000000,
+    "Q Table Length": 423,
+    "Frames Per Death": 427.87704525227633,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:45",
+    "Deaths": 222368,
+    "Highest Score": 129,
+    "Ran Frames": 100000000,
+    "Q Table Length": 424,
+    "Frames Per Death": 449.7049935242481,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:43",
+    "Deaths": 222237,
+    "Highest Score": 100,
+    "Ran Frames": 100000000,
+    "Q Table Length": 424,
+    "Frames Per Death": 449.97007698988017,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:42",
+    "Deaths": 116857,
+    "Highest Score": 182,
+    "Ran Frames": 100000000,
+    "Q Table Length": 842,
+    "Frames Per Death": 855.7467674165861,
+    "End Time": 1775170004.534252,
+    "Average Score Per Run": 11
+}
+{
+    "Time Elapsed": "00:41",
+    "Deaths": 115688,
+    "Highest Score": 175,
+    "Ran Frames": 100000000,
+    "Q Table Length": 842,
+    "Frames Per Death": 864.3938870064311,
+    "End Time": 1775172468.0456612,
+    "Average Score Per Run": 11
+}
+{
+    "Time Elapsed": "00:39",
+    "Deaths": 115714,
+    "Highest Score": 195,
+    "Ran Frames": 100000000,
+    "Q Table Length": 842,
+    "Frames Per Death": 864.1996646905301,
+    "End Time": 1775174855.507409,
+    "Average Score Per Run": 11
+}
+{
+    "Time Elapsed": "00:40",
+    "Deaths": 115448,
+    "Highest Score": 177,
+    "Ran Frames": 100000000,
+    "Q Table Length": 842,
+    "Frames Per Death": 866.190839165685,
+    "End Time": 1775177256.5397716,
+    "Average Score Per Run": 11
+}
+{
+    "Time Elapsed": "00:41",
+    "Deaths": 223265,
+    "Highest Score": 125,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1283,
+    "Frames Per Death": 447.8982375204354,
+    "End Time": 1775180345.86189,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:41",
+    "Deaths": 221023,
+    "Highest Score": 142,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1283,
+    "Frames Per Death": 452.44160110033795,
+    "End Time": 1775182817.6075952,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:40",
+    "Deaths": 221897,
+    "Highest Score": 145,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 450.65954023713704,
+    "End Time": 1775185243.7932992,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:40",
+    "Deaths": 221656,
+    "Highest Score": 187,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 451.14952899989174,
+    "End Time": 1775187652.4004426,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:39",
+    "Deaths": 222849,
+    "Highest Score": 144,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 448.73434478054645,
+    "End Time": 1775190049.956711,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:39",
+    "Deaths": 221844,
+    "Highest Score": 145,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 450.76720578424477,
+    "End Time": 1775192443.268831,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:40",
+    "Deaths": 221455,
+    "Highest Score": 149,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 451.55900747330156,
+    "End Time": 1775194875.0405989,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:39",
+    "Deaths": 221444,
+    "Highest Score": 145,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 451.58143819656436,
+    "End Time": 1775197273.3453135,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:39",
+    "Deaths": 221386,
+    "Highest Score": 123,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 451.6997461447427,
+    "End Time": 1775199647.559488,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:39",
+    "Deaths": 222629,
+    "Highest Score": 164,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 449.1777800735753,
+    "End Time": 1775202020.0074034,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:39",
+    "Deaths": 221121,
+    "Highest Score": 153,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 452.24108067528636,
+    "End Time": 1775204391.1010027,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:39",
+    "Deaths": 222076,
+    "Highest Score": 156,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 450.296294962085,
+    "End Time": 1775206764.174155,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:40",
+    "Deaths": 222163,
+    "Highest Score": 145,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 450.1199569685321,
+    "End Time": 1775209164.5736341,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:39",
+    "Deaths": 222630,
+    "Highest Score": 136,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 449.1757624758568,
+    "End Time": 1775211545.1950235,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:39",
+    "Deaths": 220095,
+    "Highest Score": 148,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 454.34925827483585,
+    "End Time": 1775213923.5526373,
+    "Average Score Per Run": 6
+}
+{
+    "Time Elapsed": "00:39",
+    "Deaths": 221408,
+    "Highest Score": 170,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1285,
+    "Frames Per Death": 451.6548634195693,
+    "End Time": 1775216308.7792556,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:36",
+    "Deaths": 324873,
+    "Highest Score": 91,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1166,
+    "Frames Per Death": 307.81259138186306,
+    "End Time": "2026-04-03 09:43:26",
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:42",
+    "Deaths": 322442,
+    "Highest Score": 89,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1169,
+    "Frames Per Death": 310.1332952903158,
+    "End Time": "2026-04-03 10:45:39",
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:41",
+    "Deaths": 323849,
+    "Highest Score": 73,
+    "Ran Frames": 100000000,
+    "Q Table Length": 1173,
+    "Frames Per Death": 308.78588477963496,
+    "End Time": "2026-04-03 11:27:30",
+    "Average Score Per Run": 3
+}

@@ -334,7 +334,7 @@ class Game:
             bird_vel=self.bird_vel,
             next_pipe_gap_center_y=next_pipe.gap_center_y if next_pipe else None,
             next_pipe_gap_half=next_pipe.gap_half if next_pipe else None,
-            next_pipe_distance_x=(next_pipe.x - bird_x) if next_pipe else None,
+            next_pipe_distance_x=(next_pipe.x + self.pipe_w - bird_x) if next_pipe else None,
         )
 
     def take_action(self, flap: bool) -> State:

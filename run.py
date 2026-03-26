@@ -5,6 +5,10 @@ import time
 from game.main import Game
 from agent import Agent
 from pprint import pprint
+import winsound
+import os
+import json
+from datetime import datetime
 
 TRAIN_MODE = True
 
@@ -12,22 +16,26 @@ def main() -> None:
     # Setup
     log_info = {}
     start_time = time.time()
-    frame_delay_seconds = 1.0 / 30
+    frame_delay_seconds = 1.0 / 60
     highest_score = -99
     death_count = 0
     flap_action_index = 1
     game = Game(mute=True, enable_draw=not TRAIN_MODE)
     agent = Agent()
+    agent.epsilon = 0.05
     agent.load_previous_agent()
     before_state = game.take_action(flap=flap_action_index)  # Start + first flap
 
     if TRAIN_MODE:
         add_pauses = False
+        frames = 1000000 # 1min<
         frames = 5000000 # 1min
         frames = 10000000 # 2min
+        frames = 30000000 # 9min
+        frames = 100000000 # 36min
     else:
         add_pauses = True
-        frames = 1000  # 0min
+        frames = 100000000
 
     # The Q learning model works like this
     # 1. Get the current state
@@ -90,6 +98,14 @@ def main() -> None:
     log_info["Highest Score"] = highest_score
     log_info["Ran Frames"] = frames
     log_info["Q Table Length"] = len(agent.quality_table)
+    log_info["Frames Per Death"] = frames / death_count
+    log_info["End Time"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    log_info["Min Relative Y"] = agent.min_relative_y
+    log_info["Max Relative Y"] = agent.max_relative_y
+    log_info["Min Bird Velocity"] = agent.min_bird_velocity
+    log_info["Max Bird Velocity"] = agent.max_bird_velocity
+    log_info["Min Next Pipe Distance X"] = agent.min_next_pipe_distance_x
+    log_info["Max Next Pipe Distance X"] = agent.max_next_pipe_distance_x
 
     total_score = 0
     for run in log_info["runs"]:
@@ -97,9 +113,17 @@ def main() -> None:
     log_info["Average Score Per Run"] = int(total_score / len(log_info["runs"]))
 
     del log_info["runs"]  # I just don't want to print this right now
+
+    with open("progress_log.txt", 'a') as file:
+        json.dump(log_info, file, indent=4)
+        file.write("\n")
+
     pprint(log_info, indent=4)
+    # winsound.Beep(1000, 500)  # frequency (Hz), duration (ms)
+
+
 
 
 if __name__ == "__main__":
-    for _ in range(5):
+    for _ in range(100):
         main()
