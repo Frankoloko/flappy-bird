@@ -72,14 +72,14 @@ class Agent:
     
     def get_state_hash(self, state):
         if state.next_pipe_gap_center_y is not None:
-            relative_y = int((state.bird_y - state.next_pipe_gap_center_y) / 15)
+            relative_y = int(state.bird_y - state.next_pipe_gap_center_y)
         else:
             relative_y = 0
 
         tuple_data = (
             relative_y,
             int(round(state.bird_vel)),
-            int((state.next_pipe_distance_x or 0) / 10),
+            int(state.next_pipe_distance_x or 0),
         )
         return str(tuple_data)
 

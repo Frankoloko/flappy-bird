@@ -6,7 +6,7 @@ from game.main import Game
 from agent import Agent
 from pprint import pprint
 
-TRAIN_MODE = False
+TRAIN_MODE = True
 
 def main() -> None:
     # Setup
