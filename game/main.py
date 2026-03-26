@@ -118,11 +118,12 @@ class State:
 
 
 class Game:
-    def __init__(self, enable_draw: bool = True) -> None:
+    def __init__(self, enable_draw: bool = True, mute: bool = False) -> None:
         pygame.init()
         pygame.mixer.init()
         pygame.display.set_caption("Flappy Bird")
         self.enable_draw = enable_draw
+        self.mute = mute
         self.screen = pygame.display.set_mode((WINDOW_W, WINDOW_H))
         self.clock = pygame.time.Clock()
 
@@ -206,7 +207,7 @@ class Game:
         return r
 
     def flap(self) -> None:
-        if self.snd_wing:
+        if self.snd_wing and not self.mute:
             self.snd_wing.play()
         self.bird_vel = FLAP_NATIVE * SCALE
 
@@ -214,9 +215,9 @@ class Game:
         if self.state != "playing":
             return
         self.state = "gameover"
-        if self.snd_hit:
+        if self.snd_hit and not self.mute:
             self.snd_hit.play()
-        if self.snd_die:
+        if self.snd_die and not self.mute:
             self.snd_die.play()
 
     def update_ready(self) -> None:
@@ -276,7 +277,7 @@ class Game:
             if not p.passed and p.x + self.pipe_w < br.centerx:
                 p.passed = True
                 self.score += 1
-                if self.snd_point:
+                if self.snd_point and not self.mute:
                     self.snd_point.play()
 
     def update_gameover(self) -> None:
@@ -286,7 +287,7 @@ class Game:
         """Advance the simulation by one frame. If ``flap`` is true, apply a tap / flap first (same semantics as space/click in ``run``)."""
         if self.state == "ready":
             if flap:
-                if self.snd_swoosh:
+                if self.snd_swoosh and not self.mute:
                     self.snd_swoosh.play()
                 self.start_play()
                 self.flap()
@@ -300,7 +301,7 @@ class Game:
             self.update_playing()
         elif self.state == "gameover":
             if flap:
-                if self.snd_swoosh:
+                if self.snd_swoosh and not self.mute:
                     self.snd_swoosh.play()
                 self.reset_session()
             if self.state == "ready":
