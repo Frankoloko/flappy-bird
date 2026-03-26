@@ -38,8 +38,7 @@ FLAP_NATIVE = -8.8
 MAX_DOWN_NATIVE = 9.5
 PIPE_SPEED = 2.8
 PIPE_SPAWN_DISTANCE = 200  # px in native space between pipe pair origins
-GAP_MIN = 110
-GAP_MAX = 150
+PIPE_GAP_SIZE = 130
 BIRD_HITBOX_SHRINK = 4  # pixels per side in native space
 
 # Audio (pygame mixer volume per sound, 0.0–1.0)
@@ -193,7 +192,7 @@ class Game:
 
     def _spawn_pipe(self, x: float) -> None:
         margin = 80 * SCALE
-        gap_half = random.uniform(GAP_MIN * SCALE / 2, GAP_MAX * SCALE / 2)
+        gap_half = PIPE_GAP_SIZE * SCALE / 2
         gap_center = random.uniform(
             margin + gap_half,
             self.playable_h - margin - gap_half,
