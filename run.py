@@ -6,7 +6,7 @@ from game.main import Game
 from agent import Agent
 from pprint import pprint
 
-TRAIN_MODE = True
+TRAIN_MODE = False
 
 def main() -> None:
     # Setup
@@ -16,19 +16,15 @@ def main() -> None:
     highest_score = -99
     death_count = 0
     flap_action_index = 1
-    game = Game()
+    game = Game(mute=True, enable_draw=not TRAIN_MODE)
     agent = Agent()
     agent.load_previous_agent()
     before_state = game.take_action(flap=flap_action_index)  # Start + first flap
 
     if TRAIN_MODE:
         add_pauses = False
-        frames = 10000 # 0min
-        frames = 100000 # 2min
-        frames = 500000 # 11min
-        frames = 1000000 # 25min
-        # frames = 2000000 # 45min
-        # frames = 3000000 # 1h20min
+        frames = 5000000 # 1min
+        frames = 10000000 # 2min
     else:
         add_pauses = True
         frames = 1000  # 0min
@@ -105,4 +101,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    for _ in range(5):
+        main()
