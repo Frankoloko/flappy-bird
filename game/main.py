@@ -118,10 +118,11 @@ class State:
 
 
 class Game:
-    def __init__(self) -> None:
+    def __init__(self, enable_draw: bool = True) -> None:
         pygame.init()
         pygame.mixer.init()
         pygame.display.set_caption("Flappy Bird")
+        self.enable_draw = enable_draw
         self.screen = pygame.display.set_mode((WINDOW_W, WINDOW_H))
         self.clock = pygame.time.Clock()
 
@@ -360,6 +361,8 @@ class Game:
             x += d.get_width()
 
     def draw(self) -> None:
+        if not self.enable_draw:
+            return
         self.screen.blit(self.bg, (0, 0))
 
         if self.state == "ready":
