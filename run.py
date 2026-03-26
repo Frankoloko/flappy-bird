@@ -6,7 +6,7 @@ from game.main import Game
 from agent import Agent
 from pprint import pprint
 
-TRAIN_MODE = False
+TRAIN_MODE = True
 
 def main() -> None:
     # Setup
@@ -25,8 +25,10 @@ def main() -> None:
         add_pauses = False
         frames = 10000 # 0min
         frames = 100000 # 2min
-        # frames = 500000 # 11min
-        # frames = 1000000 # 22min
+        frames = 500000 # 11min
+        frames = 1000000 # 25min
+        # frames = 2000000 # 45min
+        # frames = 3000000 # 1h20min
     else:
         add_pauses = True
         frames = 1000  # 0min
