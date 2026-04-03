@@ -987,3 +987,179 @@ From here, I added back a 0.05 fixed epsilon
     "End Time": "2026-04-03 11:27:30",
     "Average Score Per Run": 3
 }
+{
+    "Time Elapsed": "00:00",
+    "Deaths": 3343,
+    "Highest Score": 42,
+    "Ran Frames": 1000000,
+    "Q Table Length": 1173,
+    "Frames Per Death": 299.1325157044571,
+    "End Time": "2026-04-03 11:52:39",
+    "Min Relative Y": -9999,
+    "Max Relative Y": 9999,
+    "Min Bird Velocity": -9999,
+    "Max Bird Velocity": 9999,
+    "Min Next Pipe Distance X": -9999,
+    "Max Next Pipe Distance X": 9999,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:00",
+    "Deaths": 3258,
+    "Highest Score": 75,
+    "Ran Frames": 1000000,
+    "Q Table Length": 1173,
+    "Frames Per Death": 306.9367710251688,
+    "End Time": "2026-04-03 11:53:03",
+    "Min Relative Y": -9999,
+    "Max Relative Y": 9999,
+    "Min Bird Velocity": -9999,
+    "Max Bird Velocity": 9999,
+    "Min Next Pipe Distance X": -9999,
+    "Max Next Pipe Distance X": 9999,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:00",
+    "Deaths": 3183,
+    "Highest Score": 44,
+    "Ran Frames": 1000000,
+    "Q Table Length": 1174,
+    "Frames Per Death": 314.16902293433867,
+    "End Time": "2026-04-03 11:53:28",
+    "Min Relative Y": -9999,
+    "Max Relative Y": 9999,
+    "Min Bird Velocity": -9999,
+    "Max Bird Velocity": 9999,
+    "Min Next Pipe Distance X": -9999,
+    "Max Next Pipe Distance X": 9999,
+    "Average Score Per Run": 4
+}
+{
+    "Time Elapsed": "00:00",
+    "Deaths": 3283,
+    "Highest Score": 45,
+    "Ran Frames": 1000000,
+    "Q Table Length": 1174,
+    "Frames Per Death": 304.5994517209869,
+    "End Time": "2026-04-03 11:53:52",
+    "Min Relative Y": -9999,
+    "Max Relative Y": 9999,
+    "Min Bird Velocity": -9999,
+    "Max Bird Velocity": 9999,
+    "Min Next Pipe Distance X": -9999,
+    "Max Next Pipe Distance X": 9999,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:00",
+    "Deaths": 3426,
+    "Highest Score": 59,
+    "Ran Frames": 1000000,
+    "Q Table Length": 1174,
+    "Frames Per Death": 291.8855808523059,
+    "End Time": "2026-04-03 11:55:11",
+    "Min Relative Y": -499,
+    "Max Relative Y": 300,
+    "Min Bird Velocity": -16,
+    "Max Bird Velocity": 19,
+    "Min Next Pipe Distance X": 0,
+    "Max Next Pipe Distance X": 399,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:00",
+    "Deaths": 3388,
+    "Highest Score": 65,
+    "Ran Frames": 1000000,
+    "Q Table Length": 1174,
+    "Frames Per Death": 295.159386068477,
+    "End Time": "2026-04-03 11:55:37",
+    "Min Relative Y": -494,
+    "Max Relative Y": 309,
+    "Min Bird Velocity": -16,
+    "Max Bird Velocity": 19,
+    "Min Next Pipe Distance X": 0,
+    "Max Next Pipe Distance X": 399,
+    "Average Score Per Run": 3
+}
+{
+    "Time Elapsed": "00:43",
+    "Deaths": 241907,
+    "Highest Score": 193,
+    "Ran Frames": 100000000,
+    "Q Table Length": 2047,
+    "Frames Per Death": 413.38200217438936,
+    "End Time": "2026-04-03 12:40:36",
+    "Min Relative Y": -511,
+    "Max Relative Y": 500,
+    "Min Bird Velocity": -16,
+    "Max Bird Velocity": 19,
+    "Min Next Pipe Distance X": 0,
+    "Max Next Pipe Distance X": 399,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:43",
+    "Deaths": 233545,
+    "Highest Score": 117,
+    "Ran Frames": 100000000,
+    "Q Table Length": 2065,
+    "Frames Per Death": 428.183005416515,
+    "End Time": "2026-04-03 13:24:32",
+    "Min Relative Y": -510,
+    "Max Relative Y": 492,
+    "Min Bird Velocity": -16,
+    "Max Bird Velocity": 19,
+    "Min Next Pipe Distance X": 0,
+    "Max Next Pipe Distance X": 399,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:42",
+    "Deaths": 230129,
+    "Highest Score": 114,
+    "Ran Frames": 100000000,
+    "Q Table Length": 2067,
+    "Frames Per Death": 434.53888905787625,
+    "End Time": "2026-04-03 14:07:05",
+    "Min Relative Y": -510,
+    "Max Relative Y": 498,
+    "Min Bird Velocity": -16,
+    "Max Bird Velocity": 19,
+    "Min Next Pipe Distance X": 0,
+    "Max Next Pipe Distance X": 399,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:42",
+    "Deaths": 228766,
+    "Highest Score": 125,
+    "Ran Frames": 100000000,
+    "Q Table Length": 2072,
+    "Frames Per Death": 437.12789487948385,
+    "End Time": "2026-04-03 14:50:05",
+    "Min Relative Y": -510,
+    "Max Relative Y": 492,
+    "Min Bird Velocity": -16,
+    "Max Bird Velocity": 19,
+    "Min Next Pipe Distance X": 0,
+    "Max Next Pipe Distance X": 399,
+    "Average Score Per Run": 5
+}
+{
+    "Time Elapsed": "00:43",
+    "Deaths": 228718,
+    "Highest Score": 112,
+    "Ran Frames": 100000000,
+    "Q Table Length": 2074,
+    "Frames Per Death": 437.21963291039623,
+    "End Time": "2026-04-03 15:33:36",
+    "Min Relative Y": -508,
+    "Max Relative Y": 493,
+    "Min Bird Velocity": -16,
+    "Max Bird Velocity": 19,
+    "Min Next Pipe Distance X": 0,
+    "Max Next Pipe Distance X": 399,
+    "Average Score Per Run": 5
+}

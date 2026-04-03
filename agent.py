@@ -12,12 +12,12 @@ class Agent:
     agents_dir = "./agent_runs"
     agents_file_path = agents_dir + "/{}"
 
-    min_relative_y = -9999
-    max_relative_y = 9999
-    min_bird_velocity = -9999
-    max_bird_velocity = 9999
-    min_next_pipe_distance_x = -9999
-    max_next_pipe_distance_x = 9999
+    min_relative_y = 9999
+    max_relative_y = -9999
+    min_bird_velocity = 9999
+    max_bird_velocity = -9999
+    min_next_pipe_distance_x = 9999
+    max_next_pipe_distance_x = -9999
 
     def export_agent(self):
         os.makedirs(self.agents_dir, exist_ok=True)
@@ -91,9 +91,9 @@ class Agent:
             self.max_next_pipe_distance_x = next_pipe_distance_x
 
         tuple_data = (
-            self.bucket(relative_y, min_val=-510, max_val=510, num_buckets=30),
-            self.bucket(bird_velocity, min_val=-20, max_val=20, num_buckets=10),
-            self.bucket(next_pipe_distance_x, min_val=-100, max_val=300, num_buckets=10),
+            self.bucket(relative_y, min_val=-500, max_val=310, num_buckets=30),
+            self.bucket(bird_velocity, min_val=-16, max_val=19, num_buckets=10),
+            self.bucket(next_pipe_distance_x, min_val=0, max_val=400, num_buckets=10),
         )
         return str(tuple_data)
 
