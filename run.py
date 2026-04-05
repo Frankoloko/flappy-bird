@@ -10,7 +10,7 @@ import os
 import json
 from datetime import datetime
 
-TRAIN_MODE = True
+TRAIN_MODE = False
 
 def main() -> None:
     # Setup
@@ -100,8 +100,10 @@ def main() -> None:
     log_info["Q Table Length"] = len(agent.quality_table)
     log_info["Frames Per Death"] = frames / death_count
     log_info["End Time"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    log_info["Min Relative Y"] = agent.min_relative_y
-    log_info["Max Relative Y"] = agent.max_relative_y
+    log_info["Min Bird Y"] = agent.min_bird_y
+    log_info["Max Bird Y"] = agent.max_bird_y
+    log_info["Min Next Pipe Gap Center Y"] = agent.min_next_pipe_gap_center_y
+    log_info["Max Next Pipe Gap Center Y"] = agent.max_next_pipe_gap_center_y
     log_info["Min Bird Velocity"] = agent.min_bird_velocity
     log_info["Max Bird Velocity"] = agent.max_bird_velocity
     log_info["Min Next Pipe Distance X"] = agent.min_next_pipe_distance_x

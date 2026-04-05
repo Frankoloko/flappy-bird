@@ -187,8 +187,8 @@ class Game:
         self.bird_y = WINDOW_H * 0.4
         self.bird_vel = 0.0
         self.base_offset = 0.0
-        self._spawn_pipe(WINDOW_W * 0.65)
-        self._spawn_pipe(WINDOW_W * 0.65 + PIPE_SPAWN_DISTANCE * SCALE)
+        self._spawn_pipe(WINDOW_W * 1.5)
+        self._spawn_pipe(WINDOW_W * 1.5 + PIPE_SPAWN_DISTANCE * SCALE)
 
     def _spawn_pipe(self, x: float) -> None:
         margin = 80 * SCALE
@@ -211,6 +211,7 @@ class Game:
         self.bird_vel = FLAP_NATIVE * SCALE
 
     def die(self) -> None:
+        # input("Paused - press Enter to continue...")
         if self.state != "playing":
             return
         self.state = "gameover"
