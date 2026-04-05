@@ -1703,3 +1703,19 @@ From here, I added back a 0.05 fixed epsilon
     "Max Next Pipe Distance X": 760,
     "Average Score Per Run": 5
 }
+{
+    "Time Elapsed": "00:43",
+    "Deaths": 309763,
+    "Highest Score": 126,
+    "Ran Frames": 100000000,
+    "Q Table Length": 977,
+    "Frames Per Death": 322.8274519552045,
+    "End Time": "2026-04-05 08:32:57",
+    "Min Relative Y": -510.6324978280431,
+    "Max Relative Y": 499.90365607646237,
+    "Min Bird Velocity": -16,
+    "Max Bird Velocity": 19,
+    "Min Next Pipe Distance X": 0,
+    "Max Next Pipe Distance X": 760,
+    "Average Score Per Run": 2
+}

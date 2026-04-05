@@ -10,7 +10,7 @@ import os
 import json
 from datetime import datetime
 
-TRAIN_MODE = False
+TRAIN_MODE = True
 
 def main() -> None:
     # Setup

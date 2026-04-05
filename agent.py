@@ -87,7 +87,7 @@ class Agent:
             self.max_next_pipe_distance_x = next_pipe_distance_x
 
         tuple_data = (
-            self.bucket(relative_y, min_val=-1, max_val=803, num_buckets=30),
+            self.bucket(relative_y, min_val=-510, max_val=500, num_buckets=30),
             self.bucket(bird_velocity, min_val=-16, max_val=19, num_buckets=5),
             self.bucket(next_pipe_distance_x, min_val=0, max_val=399, num_buckets=20),
         )
