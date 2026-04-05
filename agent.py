@@ -12,10 +12,8 @@ class Agent:
     agents_dir = "./agent_runs"
     agents_file_path = agents_dir + "/{}"
 
-    min_bird_y = 9999
-    max_bird_y = -9999
-    min_next_pipe_gap_center_y = 9999
-    max_next_pipe_gap_center_y = -9999
+    min_relative_y = 9999
+    max_relative_y = -9999
     min_bird_velocity = 9999
     max_bird_velocity = -9999
     min_next_pipe_distance_x = 9999
@@ -70,20 +68,15 @@ class Agent:
         self.epsilon = max(0.05, self.epsilon)
     
     def get_state_hash(self, state):
-        bird_y = int(state.bird_y)
-        next_pipe_gap_center_y = int(state.next_pipe_gap_center_y)
+        relative_y = state.bird_y - state.next_pipe_gap_center_y
         bird_velocity = int(round(state.bird_vel))
         next_pipe_distance_x = int(state.next_pipe_distance_x or 0)
         
         # Save the min and max values of each for logging later
-        if bird_y < self.min_bird_y:
-            self.min_bird_y = bird_y
-        if bird_y > self.max_bird_y:
-            self.max_bird_y = bird_y
-        if next_pipe_gap_center_y < self.min_next_pipe_gap_center_y:
-            self.min_next_pipe_gap_center_y = next_pipe_gap_center_y
-        if next_pipe_gap_center_y > self.max_next_pipe_gap_center_y:
-            self.max_next_pipe_gap_center_y = next_pipe_gap_center_y
+        if relative_y < self.min_relative_y:
+            self.min_relative_y = relative_y
+        if relative_y > self.max_relative_y:
+            self.max_relative_y = relative_y
         if bird_velocity < self.min_bird_velocity:
             self.min_bird_velocity = bird_velocity
         if bird_velocity > self.max_bird_velocity:
@@ -94,8 +87,7 @@ class Agent:
             self.max_next_pipe_distance_x = next_pipe_distance_x
 
         tuple_data = (
-            self.bucket(bird_y, min_val=-1, max_val=803, num_buckets=30),
-            self.bucket(next_pipe_gap_center_y, min_val=290, max_val=509, num_buckets=30),
+            self.bucket(relative_y, min_val=-1, max_val=803, num_buckets=30),
             self.bucket(bird_velocity, min_val=-16, max_val=19, num_buckets=5),
             self.bucket(next_pipe_distance_x, min_val=0, max_val=399, num_buckets=20),
         )
